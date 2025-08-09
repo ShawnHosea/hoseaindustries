@@ -5,8 +5,8 @@
 - **production**: https://hoseaindustries.com/
 
 ### AWS
-- **staging:** 	
-- **production:** 
+- **staging:** https://9xnlpdf095.execute-api.us-west-2.amazonaws.com/
+- **production:** https://2x11semrig.execute-api.us-west-2.amazonaws.com/
 
 ### Deploy
 git commit -a -m "wip" --no-verify && git push origin HEAD
