@@ -1,17 +1,197 @@
 <style>
-	h1 {
-	font-size: clamp(3rem, 15vw, 10rem);
-	line-height: 0.9;
-	font-weight: 900;
-	letter-spacing: -0.05em;
-	-webkit-background-clip: text;
-	background-clip: text;
-	}
-	input {
-		background-color: #ffffff;
-	}
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-feature-settings: "kern" 1;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        body {
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
+            background: #ffffff;
+            color: #000000;
+            line-height: 1.2;
+            font-weight: 400;
+        }
+        
+        ::selection {
+            background: #000000;
+            color: #ffffff;
+        }
+        
+        ::-moz-selection {
+            background: #000000;
+            color: #ffffff;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #ffffff;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #000000;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #333333;
+        }
+        
+        .container {
+            min-height: 100vh;
+            background: white;
+            color: black;
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.2;
+        }
+        
+        .content {
+            max-width: 64rem;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .content {
+                padding: 4rem;
+            }
+        }
+        
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.025em;
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            header h1 {
+                font-size: 3.75rem;
+            }
+        }
+        
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: black;
+        }
+        
+        .projects {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+        
+        .project {
+            border-left: 4px solid black;
+            padding-left: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            transition: all 0.2s ease;
+        }
+        
+        .project:hover {
+            background: black;
+            color: white;
+            margin-left: -2rem;
+            padding-left: 3.5rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        
+        .project h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.025em;
+        }
+        
+        @media (min-width: 768px) {
+            .project h2 {
+                font-size: 1.875rem;
+            }
+        }
+        
+        .project a {
+            display: block;
+            font-size: 1.125rem;
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+            color: inherit;
+            width: fit-content;
+            padding: 0.125rem 0.25rem;
+            margin: -0.125rem -0.25rem;
+            transition: all 0.2s ease;
+        }
+        
+        .project a:hover {
+            background: white;
+            color: black;
+        }
+        
+        .project:hover a:hover {
+            background: black;
+            color: white;
+            outline: 2px solid white;
+        }
+        
+        .project p {
+            font-size: 1rem;
+            line-height: 1.625;
+            max-width: 32rem;
+        }
 </style>
-<main>
-	<h1>Hosea Industries</h1>
-</main>
+
+<div class="container">
+    <div class="content">
+        <main>
+            <header>
+                <h1>HOSEA INDUSTRIES</h1>
+                <div class="divider"></div>
+            </header>
+
+            <div class="projects">
+                <div class="project">
+                    <h2>TIPCUE</h2>
+                    <a href="https://tipcue.com" target="_blank" rel="noopener noreferrer">tipcue.com</a>
+                    <p>A platform for people to accept payments for their opinions</p>
+                </div>
+                
+                <div class="project">
+                    <h2>HERCOVERY</h2>
+                    <a href="https://hercovery.com" target="_blank" rel="noopener noreferrer">hercovery.com</a>
+                    <p>Chatbot companion for women's mental wellness</p>
+                </div>
+                
+                <div class="project">
+                    <h2>ASVABDRILL</h2>
+                    <a href="https://asvabdrill.com" target="_blank" rel="noopener noreferrer">asvabdrill.com</a>
+                    <p>Learning platform for military recruits studying for the ASVAB</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <my-footer />
+</div>
 <script type="module" src="/_public/browser/index.mjs"></script>
